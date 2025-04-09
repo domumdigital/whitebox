@@ -59,14 +59,8 @@ export default function WelcomeScreen() {
         <Animated.View style={[styles.beforeImageContainer, beforeImageStyle]}>
           <Image
             source={require('../../assets/images/before.png')}
-            style={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: SLIDER_WIDTH,
-    height: SLIDER_HEIGHT,
-  }}
-  resizeMode="cover"
+            style={styles.image}
+            resizeMode="cover"
           />
         </Animated.View>
         <GestureDetector gesture={gesture}>
@@ -162,13 +156,12 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   beforeImageContainer: {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  height: '100%',
-  overflow: 'hidden',
-  width: SLIDER_WIDTH, // <- optional, fallback default
-},
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: '100%',
+    overflow: 'hidden',
+  },
   handle: {
     position: 'absolute',
     top: 0,
