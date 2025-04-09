@@ -59,7 +59,13 @@ export default function WelcomeScreen() {
         <Animated.View style={[styles.beforeImageContainer, beforeImageStyle]}>
           <Image
             source={require('../../assets/images/before.png')}
-            style={styles.image}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: SLIDER_WIDTH,
+              height: SLIDER_HEIGHT,
+            }}
             resizeMode="cover"
           />
         </Animated.View>
