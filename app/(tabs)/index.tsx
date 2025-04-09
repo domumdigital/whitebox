@@ -21,9 +21,6 @@ const SLIDER_WIDTH = Math.min(SCREEN_WIDTH * 0.9, 500);
 const SLIDER_HEIGHT = Math.min(SCREEN_HEIGHT * 0.4, 500);
 const HANDLE_WIDTH = 32;
 
-const BEFORE_IMAGE = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c';
-const AFTER_IMAGE = 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c';
-
 export default function WelcomeScreen() {
   const insets = useSafeAreaInsets();
   const position = useSharedValue(SLIDER_WIDTH / 2);
@@ -55,15 +52,21 @@ export default function WelcomeScreen() {
     return (
       <View style={styles.sliderContainer}>
         <Image
-          source={{ uri: AFTER_IMAGE }}
+          source={require('../../assets/images/after.png')}
           style={styles.image}
           resizeMode="cover"
         />
         <Animated.View style={[styles.beforeImageContainer, beforeImageStyle]}>
           <Image
-            source={{ uri: BEFORE_IMAGE }}
-            style={styles.image}
-            resizeMode="cover"
+            source={require('../../assets/images/before.png')}
+            style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: SLIDER_WIDTH,
+    height: SLIDER_HEIGHT,
+  }}
+  resizeMode="cover"
           />
         </Animated.View>
         <GestureDetector gesture={gesture}>
@@ -159,12 +162,13 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   beforeImageContainer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    height: '100%',
-    overflow: 'hidden',
-  },
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  height: '100%',
+  overflow: 'hidden',
+  width: SLIDER_WIDTH, // <- optional, fallback default
+},
   handle: {
     position: 'absolute',
     top: 0,
