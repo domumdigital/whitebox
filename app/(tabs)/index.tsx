@@ -52,13 +52,19 @@ export default function WelcomeScreen() {
     return (
       <View style={styles.sliderContainer}>
         <Image
-          source={require('../../assets/images/after.png')}
+          source={Platform.select({
+            web: { uri: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg' },
+            default: require('../../assets/images/after.png'),
+          })}
           style={styles.image}
           resizeMode="cover"
         />
         <Animated.View style={[styles.beforeImageContainer, beforeImageStyle]}>
           <Image
-            source={require('../../assets/images/before.png')}
+            source={Platform.select({
+              web: { uri: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
+              default: require('../../assets/images/before.png'),
+            })}
             style={{
               position: 'absolute',
               top: 0,
@@ -94,7 +100,10 @@ export default function WelcomeScreen() {
         ]}>
         <View style={styles.logoContainer}>
           <Image
-            source={require('../../assets/images/icon.png')}
+            source={Platform.select({
+              web: { uri: 'https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg' },
+              default: require('../../assets/images/icon.png'),
+            })}
             style={styles.logo}
             resizeMode="contain"
           />
