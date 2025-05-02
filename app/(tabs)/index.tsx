@@ -62,7 +62,7 @@ export default function WelcomeScreen() {
         <Animated.View style={[styles.beforeImageContainer, beforeImageStyle]}>
           <Image
             source={Platform.select({
-              web: { uri: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
+              web: { uri: 'https://images.pexels.com/photos/6267516/pexels-photo-6267516.jpeg' },
               default: require('../../assets/images/before.png'),
             })}
             style={{
