@@ -100,9 +100,7 @@ export default function WelcomeScreen() {
         <View style={styles.logoContainer}>
           <Image
             source={Platform.select({
-              web: {
-                uri: 'https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg',
-              },
+             
               default: require('../../assets/images/icon.png'),
             })}
             style={styles.logo}
