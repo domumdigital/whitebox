@@ -100,7 +100,6 @@ export default function WelcomeScreen() {
         <View style={styles.logoContainer}>
           <Image
             source={Platform.select({
-             
               default: require('../../assets/images/icon.png'),
             })}
             style={styles.logo}
