@@ -53,7 +53,6 @@ export default function WelcomeScreen() {
       <View style={styles.sliderContainer}>
         <Image
           source={Platform.select({
-            web: { uri: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg' },
             default: require('../../assets/images/after.png'),
           })}
           style={styles.image}
@@ -62,7 +61,6 @@ export default function WelcomeScreen() {
         <Animated.View style={[styles.beforeImageContainer, beforeImageStyle]}>
           <Image
             source={Platform.select({
-              web: { uri: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
               default: require('../../assets/images/before.png'),
             })}
             style={{
@@ -85,7 +83,7 @@ export default function WelcomeScreen() {
   }, []);
 
   return (
-    <ScrollView 
+    <ScrollView
       style={styles.scrollView}
       contentContainerStyle={styles.scrollContent}
       showsVerticalScrollIndicator={false}
@@ -97,11 +95,14 @@ export default function WelcomeScreen() {
             paddingTop: Platform.OS === 'ios' ? insets.top : 20,
             paddingBottom: insets.bottom + 20,
           },
-        ]}>
+        ]}
+      >
         <View style={styles.logoContainer}>
           <Image
             source={Platform.select({
-              web: { uri: 'https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg' },
+              web: {
+                uri: 'https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg',
+              },
               default: require('../../assets/images/icon.png'),
             })}
             style={styles.logo}
